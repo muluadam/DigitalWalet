@@ -5,6 +5,8 @@ import com.digital.DigitalWalet.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerServiceIml implements CustomerService {
 
@@ -19,6 +21,11 @@ public class CustomerServiceIml implements CustomerService {
     @Override
     public Customers addCustomer(Customers customers) {
         return customerRepository.save(customers);
+    }
+
+    @Override
+    public List<Customers> getAll() {
+        return customerRepository.findAll();
     }
 
 

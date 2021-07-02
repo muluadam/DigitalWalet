@@ -4,31 +4,29 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
 public class Customers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(nullable = false, length = 20)
-    private String name;
-
-    @Column(nullable = false,unique = true)
+    private Long id;
+    private String firstName;
+    private String lastName;
     private String email;
-
-
-    @Column(nullable = false, length = 20)
-    private String gender;
-
-    private String phone;
+    private String password;
+    private int pin;
+    private Boolean locked = false;
+    private Boolean enabled = false;
+    @CreationTimestamp
+    private LocalDate dateCreated;
 
 }

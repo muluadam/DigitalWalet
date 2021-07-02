@@ -2,13 +2,21 @@ package com.digital.DigitalWalet;
 
 import com.digital.DigitalWalet.repository.CustomerRepository;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@RestController
+//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+//@RestController
+@Configuration
+
+@SpringBootApplication
+@EnableScheduling
 public class DigitalWaletApplication {
 
 	public static void main(String[] args) {
@@ -17,6 +25,7 @@ public class DigitalWaletApplication {
 
 	@GetMapping("/")
 	public String get(){
+
 		return "Hello Alex";
 	}
 }
