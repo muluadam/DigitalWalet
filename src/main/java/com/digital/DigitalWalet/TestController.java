@@ -23,9 +23,9 @@ public class TestController {
         return "Hello  added ";
     }
 
-    @GetMapping("/hello4")
+    @GetMapping("/")
     public String test4(){
-        return "Hello Muluadam Finally Done  ";
+        return "Hello! Done  ";
     }
 
 
