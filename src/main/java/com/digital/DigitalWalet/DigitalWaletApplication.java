@@ -19,11 +19,11 @@ public class DigitalWaletApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DigitalWaletApplication.class, args);
+
 	}
 
 	@GetMapping("/")
 	public String get(){
-
 		return "Hello Alex";
 	}
 }
