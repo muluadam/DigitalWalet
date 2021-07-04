@@ -29,6 +29,11 @@ public class CustomerController {
     public ResponseEntity<List<Customers>> getUser(){
         return new ResponseEntity<>(customerService.getAll(), HttpStatus.OK);
     }
+
+    @GetMapping("/findAll")
+    public ResponseEntity<List<Customers>> findAll(){
+        return new ResponseEntity<>(customerService.getAll(), HttpStatus.OK);
+    }
     @GetMapping("/user/{id}")
     public ResponseEntity<Customers> getUserById(@PathVariable Integer id){
         return new ResponseEntity<>(customerService.getById(id), HttpStatus.OK);
