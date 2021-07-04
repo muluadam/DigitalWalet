@@ -30,7 +30,7 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/find")
     public ResponseEntity<List<Customers>> findAll(){
         return new ResponseEntity<>(customerService.getAll(), HttpStatus.OK);
     }
